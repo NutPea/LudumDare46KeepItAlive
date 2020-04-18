@@ -6,10 +6,11 @@ public class FindPlayerInRadius : MonoBehaviour
 {
 
     private bool once ;
-    private GameObject Player;
+   [SerializeField] private GameObject Player;
 
     private bool inRange;
     [SerializeField] private float range;
+
     // Start is called before the first frame update
     private void Awake() {
         once = false; 
