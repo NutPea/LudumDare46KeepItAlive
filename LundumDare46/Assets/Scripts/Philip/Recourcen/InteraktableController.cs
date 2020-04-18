@@ -7,13 +7,13 @@ public class InteraktableController : MonoBehaviour
    
     private FindPlayerInRadius findPlayerInRadius;
     private bool once;
-    [SerializeField] private float interaktAmount;
-    [SerializeField] private float interaktAmountTime;
+    public float interaktAmount;
+    public float interaktAmountTime;
     private GameObject Player;
     private RecourceManager recourceManager;
     private GameObject interaktableGameObject;
     private InteraktableSprite interaktableSprite;
-    [SerializeField]private bool interakted = false;
+    public bool interakted = false;
 
     // Start is called before the first frame update
     void Start()

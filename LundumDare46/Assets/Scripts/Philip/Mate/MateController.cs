@@ -6,7 +6,7 @@ public class MateController : MonoBehaviour
 {
 
     private InteraktController interaktController;
-    [SerializeField]private int maxMateHealth;
+    public int maxMateHealth;
     private int currentHealth;
     void Start()
     {

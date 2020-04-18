@@ -5,7 +5,7 @@ using UnityEngine;
 public class RecourceManager : MonoBehaviour
 {
 
-    [SerializeField] private int ressourceValue;
+    public int ressourceValue;
     // Start is called before the first frame update
 
     public void addRecources(int addableRecources){
