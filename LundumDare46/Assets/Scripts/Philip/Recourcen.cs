@@ -5,78 +5,17 @@ using UnityEngine;
 public class Recourcen : MonoBehaviour
 {
 
-    private FindPlayerInRadius findPlayerInRadius;
-    private bool once;
-    [SerializeField] private float interaktAmount;
-    [SerializeField] private float interaktAmountTime;
-    private GameObject Player;
-    private RecourceManager recourceManager;
-    private GameObject interaktableGameObject;
-    private InteraktableSprite interaktableSprite;
-    [SerializeField]private bool interakted = false;
+  private InteraktController interaktController;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        findPlayerInRadius = GetComponent<FindPlayerInRadius>();
-    }
-    // Update is called once per frame
-    void Update()
-    {
-        Initialise();
-        Interakting();
-        WhatHappendAfterInterakting();
+  private void Start() {
+      interaktController = GetComponent<InteraktController>();
+  }
 
-    }
+  private void Update() {
+      if(interaktController.getInterakted()){
+        interaktController.GetRecourceManager().addRecources(1);
+        Destroy(gameObject);
+      }
+  }
 
-    private void WhatHappendAfterInterakting()
-    {
-        if (interakted)
-        {
-            recourceManager.addRecources(1);
-            Destroy(gameObject);
-        }
-    }
-
-    private void Initialise()
-    {
-        if (Player == null)
-        {
-            Player = findPlayerInRadius.getPlayer();
-        }
-        if (Player != null && once == false)
-        {
-            recourceManager = Player.GetComponent<RecourceManager>();
-            interaktableGameObject = Player.transform.GetChild(1).gameObject;
-            interaktableSprite = interaktableGameObject.transform.GetChild(0).GetComponent<InteraktableSprite>();
-            once = true;
-        }
-    }
-
-    private void Interakting()
-    {
-        if (Player != null && !interakted)
-        {
-            if (findPlayerInRadius.getInRange())
-            {
-                if (Input.GetKey(KeyCode.E))
-                {
-                    interaktAmount += Time.deltaTime / interaktAmountTime;
-                    interaktableGameObject.SetActive(true);
-                    interaktableSprite.setInteraktAmount(interaktAmount);
-                    if (interaktAmount >= 1)
-                    {
-                        interakted = true;
-                        interaktableSprite.setInteraktAmount(0);
-                        interaktableGameObject.SetActive(false);
-                    }
-                }
-                else
-                {
-                    interaktAmount = 0;
-                    interaktableSprite.setInteraktAmount(interaktAmount);
-                }
-            }
-        }
-    }
 }
