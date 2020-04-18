@@ -45,11 +45,11 @@ public class InteraktableController : MonoBehaviour
 
     private void Interakting()
     {
-        if (Player != null && !interakted)
+        if (Player != null && !interakted )
         {
             if (findPlayerInRadius.getInRange())
             {
-                if (Input.GetKey(KeyCode.E))
+                if (Input.GetKey(KeyCode.E) && interaktAmount < 1)
                 {
                     interaktAmount += Time.deltaTime / interaktAmountTime;
                     interaktableGameObject.SetActive(true);
@@ -65,6 +65,7 @@ public class InteraktableController : MonoBehaviour
                 {
                     interaktAmount = 0;
                     interaktableSprite.setInteraktAmount(interaktAmount);
+                    interaktableGameObject.SetActive(false);
                 }
             }
         }
@@ -72,6 +73,10 @@ public class InteraktableController : MonoBehaviour
 
     public bool getInterakted(){
         return interakted;
+    }
+
+    public void setInterakted(bool interakted){
+        this.interakted = interakted; 
     }
 
     public RecourceManager GetRecourceManager(){

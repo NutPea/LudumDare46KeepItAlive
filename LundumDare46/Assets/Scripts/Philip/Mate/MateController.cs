@@ -5,19 +5,50 @@ using UnityEngine;
 public class MateController : MonoBehaviour
 {
 
-    private InteraktController interaktController;
+    private InteraktableController interaktController;
     public int maxMateHealth;
-    private int currentHealth;
+    public int currentHealth;
+    public int loseLivePerTick;
+    public float tickTimer ;
+    private float currentTimer;
+
+
     void Start()
     {
-       interaktController=GetComponent<InteraktController>();
+       interaktController=GetComponent<InteraktableController>();
        currentHealth = maxMateHealth;
+       currentTimer = tickTimer ;
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        if(currentTimer <= 0){
+            currentTimer = tickTimer;
+            currentHealth -= loseLivePerTick;
+            
+        }else{
+            currentTimer -= Time.deltaTime;
+        }
+
+        if(interaktController.getInterakted()){
+            interaktController.setInterakted(false);
+            int useAbleRecourceAmount = interaktController.GetRecourceManager().useRessource();
+            if(useAbleRecourceAmount != 0){
+                int brieflyCurrentHealth = currentHealth + 2 *useAbleRecourceAmount;
+                if( brieflyCurrentHealth > maxMateHealth){
+                    currentHealth = maxMateHealth;
+                }
+                else{
+                    currentHealth = brieflyCurrentHealth;
+                }
+            }
+        }
+
+        if(currentHealth <=0){
+            Debug.Log("Mate Died");
+        }
+
     }
 
 

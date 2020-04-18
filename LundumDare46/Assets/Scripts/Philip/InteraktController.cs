@@ -74,6 +74,10 @@ public class InteraktController : MonoBehaviour
         return interakted;
     }
 
+  public void setInterakted(bool interakted){
+        this.interakted = interakted; 
+    }
+
     public RecourceManager GetRecourceManager(){
         return recourceManager;
     }
