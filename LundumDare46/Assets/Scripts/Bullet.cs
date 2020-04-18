@@ -5,10 +5,19 @@ using UnityEngine;
 public class Bullet : MonoBehaviour
 {
     //public GameObject hitEffekt;
-    private void OnCollisionEnter2D(Collision2D collision)
+
+
+    void Start()
     {
-        //GameObject effect = Instantiate(hitEffekt, transform.position, Quaternion.identity);
-        //Destroy(effect, 5f);
-        Destroy(gameObject);
+        Destroy(gameObject, 3f);       
+    }
+
+    void OnCollisionEnter2D(Collision2D collision)
+    {
+        if(collision.gameObject.tag != "Player") {
+            //GameObject effect = Instantiate(hitEffekt, transform.position, Quaternion.identity);
+            //Destroy(effect, 5f);
+            Destroy(gameObject);
+        }
     }
 }
