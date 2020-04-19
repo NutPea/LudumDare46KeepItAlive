@@ -169,12 +169,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyName: 
-  maxHealth: 2
-  currHealth: 2
+  Health: 2
   baseAttack: 1
   moveSpeed: 2
-  homePosition: {x: 0, y: 0, z: 0}
-  target: {fileID: 0}
   chaseRadius: 4
   attackRadius: 2
   path: []

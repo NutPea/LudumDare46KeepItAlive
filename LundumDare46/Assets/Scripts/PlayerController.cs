@@ -44,20 +44,20 @@ public class PlayerController : MonoBehaviour
 
     void FixedUpdate()
     {
-        rb.MovePosition(rb.position + movement * moveSpeed * Time.fixedDeltaTime);
+        rb.MovePosition(rb.position + movement.normalized * moveSpeed * Time.fixedDeltaTime);
         lookDir = mousePos - rb.position;
         angle = Mathf.Atan2(lookDir.y, lookDir.x) * Mathf.Rad2Deg - 90f;
         firePointRB.rotation = angle;
         HandleAnimation();
-        if(firePivotPoint.transform.eulerAngles.z > 180f && firePivotPoint.transform.eulerAngles.z <= 360f){
-            WeaponSprite.transform.localScale = new Vector3(WeaponSprite.transform.localScale.x,localScaleOfWeaponSprite,WeaponSprite.transform.localScale.z);
+        if (firePivotPoint.transform.eulerAngles.z > 180f && firePivotPoint.transform.eulerAngles.z <= 360f)
+        {
+            WeaponSprite.transform.localScale = new Vector3(WeaponSprite.transform.localScale.x, localScaleOfWeaponSprite, WeaponSprite.transform.localScale.z);
 
         }
-        else{
-            WeaponSprite.transform.localScale = new Vector3(WeaponSprite.transform.localScale.x,-localScaleOfWeaponSprite,WeaponSprite.transform.localScale.z);
-        }
-
-
+        else
+        {
+            WeaponSprite.transform.localScale = new Vector3(WeaponSprite.transform.localScale.x, -localScaleOfWeaponSprite, WeaponSprite.transform.localScale.z);
+        }     
     }
 
     private void  HandleAnimation()

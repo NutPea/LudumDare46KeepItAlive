@@ -4,17 +4,6 @@ using UnityEngine;
 
 public class Zombie : Enemy
 {
-    public Vector3 homePosition;
-    public Transform target;
-    public float chaseRadius;
-    public float attackRadius;
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        homePosition = gameObject.transform.position;
-        target = GameObject.FindWithTag("Player").transform;     
-    }
     
     // Update is called once per frame
     void Update()

@@ -2,10 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ShootingPlayer : Shooting
+public class PlayerShooting : Shooting
 {
-
     public Animator animator;
+    
     // Update is called once per frame
     void Update()
     {

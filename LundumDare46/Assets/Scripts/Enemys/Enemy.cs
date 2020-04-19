@@ -5,15 +5,21 @@ using UnityEngine;
 public class Enemy : MonoBehaviour
 {
     public string enemyName;
-    public int maxHealth;
-    public int currHealth;
+    public int Health;
     public int baseAttack;
     public float moveSpeed;
 
+    public float chaseRadius;
+    public float attackRadius;
+
+    protected Vector3 homePosition;
+    protected Transform target;
+
     // Start is called before the first frame update
-    void Start()
+    public virtual void Start()
     {
-           
+        homePosition = gameObject.transform.position;
+        target = GameObject.FindGameObjectWithTag("Player").transform;
     }
 
     // Update is called once per frame
@@ -24,8 +30,8 @@ public class Enemy : MonoBehaviour
 
     public void takeDamage(int damage)
     {
-        currHealth -= damage;
-        if (currHealth <= 0)
+        Health -= damage;
+        if (Health <= 0)
         {
             Debug.Log("Enemy " + gameObject.name + " destroyed!");
             Destroy(gameObject);

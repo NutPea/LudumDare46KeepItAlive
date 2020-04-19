@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ShootingEnemy : Shooting
+public class EnemyShooting : Shooting
 {
     private float timeBtwShots;
     public float startTimeBtwShots;
