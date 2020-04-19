@@ -65,14 +65,12 @@ public class PlayerController : MonoBehaviour
         animator.SetBool("isRunning",movement.x != 0 || movement.y !=0);
         if (firePivotPoint.transform.eulerAngles.z > 135f && firePivotPoint.transform.eulerAngles.z <= 225f)
         {
-            Debug.Log("Forward");
             animator.SetFloat("Angle",0f);
             animator.SetFloat("Blend",-1f);
             WeaponSprite.gameObject.GetComponent<SpriteRenderer>().sortingOrder = 1;
         }
         else if (firePivotPoint.transform.eulerAngles.z > 225f && firePivotPoint.transform.eulerAngles.z <= 315f)
         {
-            Debug.Log("Right Side");
             animator.SetFloat("Angle",1f);
             animator.SetFloat("Blend",0f);
             WeaponSprite.gameObject.GetComponent<SpriteRenderer>().sortingOrder = 1;
@@ -80,14 +78,12 @@ public class PlayerController : MonoBehaviour
         }
         else if (firePivotPoint.transform.eulerAngles.z > 45f && firePivotPoint.transform.eulerAngles.z <= 135f)
         {
-            Debug.Log("LeftSide");
             animator.SetFloat("Angle",-1f);
             animator.SetFloat("Blend",0f);
             WeaponSprite.gameObject.GetComponent<SpriteRenderer>().sortingOrder = 1;
         }
         else
         {
-            Debug.Log("Back Side");
             animator.SetFloat("Angle",0f);
             animator.SetFloat("Blend",1f);
             WeaponSprite.gameObject.GetComponent<SpriteRenderer>().sortingOrder = -10;

@@ -1021,6 +1021,7 @@ MonoBehaviour:
   bulletPrefab: {fileID: 8150383440903291436, guid: 50c6ae0e62c64384a8b07687401a92cc,
     type: 3}
   bulletForce: 20
+  animator: {fileID: 1390126602}
 --- !u!61 &2019953950
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1341,6 +1342,7 @@ MonoBehaviour:
   bulletPrefab: {fileID: 1222320825785206496, guid: 417a954df15cee944b4c3dfb8773d49f,
     type: 3}
   bulletForce: 20
+  animator: {fileID: 0}
   startTimeBtwShots: 2
   inRange: 0
 --- !u!61 &6619728814222465530
