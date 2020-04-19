@@ -2,20 +2,27 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerMovement : MonoBehaviour
+public class PlayerController : MonoBehaviour
 {
+    //private Movement attributes
     private Vector2 lookDir;
     private Vector2 movement;
-    private Vector2 mousePos;
-    private float angle;
-
+    private Vector2 mousePos;  
+    private float angle; //rotation-angle to x axis
+    
+    //public Movement attributes
     public float moveSpeed = 5f;
     public Rigidbody2D rb;
     public Camera cam;
 
+    //statisic attributes
+    public int maxHealth;
+    public int currHealth;
 
-
-    // Update is called once per frame
+    private void Start()
+    {
+        currHealth = maxHealth;
+    }
     void Update()
     {
         movement.x = Input.GetAxisRaw("Horizontal");
