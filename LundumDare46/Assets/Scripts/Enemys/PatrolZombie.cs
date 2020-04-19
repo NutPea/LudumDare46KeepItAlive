@@ -15,12 +15,14 @@ public class PatrolZombie : Zombie
 
         if (Vector3.Distance(target.position, transform.position) <= chaseRadius && Vector3.Distance(target.position, transform.position) > attackRadius)
         {
+            RotateTowards(target.position);
             transform.position = Vector3.MoveTowards(transform.position, target.position, moveSpeed * Time.deltaTime);
         }
         else if(Vector3.Distance(target.position, transform.position) > chaseRadius)
         {
             if (Vector3.Distance(transform.position, path[currentPoint].position) > roundingDistance)
             {
+                RotateTowards(path[currentPoint].position);
                 transform.position = Vector3.MoveTowards(transform.position, path[currentPoint].position, moveSpeed * Time.deltaTime);
             }
             else

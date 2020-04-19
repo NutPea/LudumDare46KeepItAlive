@@ -38,4 +38,14 @@ public class PlayerController : MonoBehaviour
         angle = Mathf.Atan2(lookDir.y, lookDir.x) * Mathf.Rad2Deg - 90f;
         rb.rotation = angle;
     }
+
+    public void takeDamage(int damage)
+    {
+        currHealth -= damage;
+        if (currHealth <= 0)
+        {
+            Debug.Log("Player " + gameObject.name + " destroyed!");
+            Destroy(gameObject);
+        }
+    }
 }

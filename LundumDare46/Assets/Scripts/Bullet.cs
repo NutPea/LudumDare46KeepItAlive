@@ -21,17 +21,4 @@ public class Bullet : MonoBehaviour
             Destroy(gameObject);
         } 
     }
-
-    void OnTriggerEnter2D(Collider2D collision)
-    {
-        if(collision.gameObject.tag == "Enemy")
-        {
-            Enemy enemy = collision.GetComponent<Enemy>();
-            if(enemy != null)
-            {
-                enemy.takeDamage(bulletDamage);
-            }
-            Destroy(gameObject);
-        }    
-    }
 }
