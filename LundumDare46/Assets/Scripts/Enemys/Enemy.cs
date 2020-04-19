@@ -5,7 +5,8 @@ using UnityEngine;
 public class Enemy : MonoBehaviour
 {
     public string enemyName;
-    public int health;
+    public int maxHealth;
+    public int currHealth;
     public int baseAttack;
     public float moveSpeed;
 
@@ -19,5 +20,15 @@ public class Enemy : MonoBehaviour
     void Update()
     {
         
+    }
+
+    public void takeDamage(int damage)
+    {
+        currHealth -= damage;
+        if (currHealth <= 0)
+        {
+            Debug.Log("Enemy " + gameObject.name + " destroyed!");
+            Destroy(gameObject);
+        }
     }
 }

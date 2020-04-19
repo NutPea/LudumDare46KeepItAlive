@@ -5,7 +5,7 @@ using UnityEngine;
 public class Zombie : Enemy
 {
     public Vector3 homePosition;
-    private Transform target;
+    public Transform target;
     public float chaseRadius;
     public float attackRadius;
 
@@ -22,7 +22,7 @@ public class Zombie : Enemy
         CheckDistance();
     }
 
-    void CheckDistance()
+    public virtual void CheckDistance()
     {
         if (Vector3.Distance(target.position, transform.position) <= chaseRadius && Vector3.Distance(target.position, transform.position) > attackRadius)
         {

@@ -18,6 +18,19 @@ public class Bullet : MonoBehaviour
             //GameObject effect = Instantiate(hitEffekt, transform.position, Quaternion.identity);
             //Destroy(effect, 5f);
             Destroy(gameObject);
-        }
+        } 
+    }
+
+    void OnTriggerEnter2D(Collider2D collision)
+    {
+        if(collision.gameObject.tag == "Enemy")
+        {
+            Enemy enemy = collision.GetComponent<Enemy>();
+            if(enemy != null)
+            {
+                enemy.takeDamage(1);
+            }
+            Destroy(gameObject);
+        }    
     }
 }
