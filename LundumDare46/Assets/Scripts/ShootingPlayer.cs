@@ -5,6 +5,7 @@ using UnityEngine;
 public class ShootingPlayer : Shooting
 {
 
+    
     // Update is called once per frame
     void Update()
     {

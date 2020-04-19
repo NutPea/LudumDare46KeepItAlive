@@ -18,17 +18,28 @@ public class PlayerController : MonoBehaviour
     //statisic attributes
     public int maxHealth;
     public int currHealth;
+    // Asthetic Shit
+    public Rigidbody2D firePointRB;
+    private Transform firePivotPoint;
+    public Animator animator;
+    public Transform WeaponSprite;
+    public float localScaleOfWeaponSprite;
+    private Transform WeaponSpriteTransform;
+
 
     private void Start()
     {
         currHealth = maxHealth;
+        firePivotPoint = firePointRB.gameObject.GetComponent<Transform>();
+        localScaleOfWeaponSprite = WeaponSprite.transform.localScale.y;
+        WeaponSpriteTransform = animator.gameObject.GetComponent<Transform>();
     }
     void Update()
     {
         movement.x = Input.GetAxisRaw("Horizontal");
         movement.y = Input.GetAxisRaw("Vertical");
-
         mousePos = cam.ScreenToWorldPoint(Input.mousePosition);
+        
     }
 
     void FixedUpdate()
@@ -36,7 +47,51 @@ public class PlayerController : MonoBehaviour
         rb.MovePosition(rb.position + movement * moveSpeed * Time.fixedDeltaTime);
         lookDir = mousePos - rb.position;
         angle = Mathf.Atan2(lookDir.y, lookDir.x) * Mathf.Rad2Deg - 90f;
-        rb.rotation = angle;
+        firePointRB.rotation = angle;
+        HandleAnimation();
+        if(firePivotPoint.transform.eulerAngles.z > 180f && firePivotPoint.transform.eulerAngles.z <= 360f){
+            WeaponSprite.transform.localScale = new Vector3(WeaponSprite.transform.localScale.x,localScaleOfWeaponSprite,WeaponSprite.transform.localScale.z);
+
+        }
+        else{
+            WeaponSprite.transform.localScale = new Vector3(WeaponSprite.transform.localScale.x,-localScaleOfWeaponSprite,WeaponSprite.transform.localScale.z);
+        }
+
+
+    }
+
+    private void  HandleAnimation()
+    {
+        animator.SetBool("isRunning",movement.x != 0 || movement.y !=0);
+        if (firePivotPoint.transform.eulerAngles.z > 135f && firePivotPoint.transform.eulerAngles.z <= 225f)
+        {
+            Debug.Log("Forward");
+            animator.SetFloat("Angle",0f);
+            animator.SetFloat("Blend",-1f);
+            WeaponSprite.gameObject.GetComponent<SpriteRenderer>().sortingOrder = 1;
+        }
+        else if (firePivotPoint.transform.eulerAngles.z > 225f && firePivotPoint.transform.eulerAngles.z <= 315f)
+        {
+            Debug.Log("Right Side");
+            animator.SetFloat("Angle",1f);
+            animator.SetFloat("Blend",0f);
+            WeaponSprite.gameObject.GetComponent<SpriteRenderer>().sortingOrder = 1;
+
+        }
+        else if (firePivotPoint.transform.eulerAngles.z > 45f && firePivotPoint.transform.eulerAngles.z <= 135f)
+        {
+            Debug.Log("LeftSide");
+            animator.SetFloat("Angle",-1f);
+            animator.SetFloat("Blend",0f);
+            WeaponSprite.gameObject.GetComponent<SpriteRenderer>().sortingOrder = 1;
+        }
+        else
+        {
+            Debug.Log("Back Side");
+            animator.SetFloat("Angle",0f);
+            animator.SetFloat("Blend",1f);
+            WeaponSprite.gameObject.GetComponent<SpriteRenderer>().sortingOrder = -10;
+        }
     }
 
     public void takeDamage(int damage)
