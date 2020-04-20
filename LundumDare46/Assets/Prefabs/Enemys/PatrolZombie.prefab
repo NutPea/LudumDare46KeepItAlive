@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 2022056993019446367}
   - component: {fileID: 2022056993019446353}
   - component: {fileID: 2022056993019446354}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: PatrolZombie
   m_TagString: Enemy
   m_Icon: {fileID: 0}

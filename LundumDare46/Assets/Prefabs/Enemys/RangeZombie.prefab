@@ -227,7 +227,7 @@ GameObject:
   - component: {fileID: 2804164062956245497}
   - component: {fileID: 2804164062956245499}
   - component: {fileID: 2804164062956245498}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: RangeZombie
   m_TagString: Enemy
   m_Icon: {fileID: 0}
