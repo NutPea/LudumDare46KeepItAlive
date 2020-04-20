@@ -297,7 +297,7 @@ MonoBehaviour:
   baseAttack: 1
   moveSpeed: 4
   healthBar: {fileID: 8816498334701752462}
-  chaseRadius: 10
+  chaseRadius: 15
   attackRadius: 7
 --- !u!61 &8816498335012778915
 BoxCollider2D:

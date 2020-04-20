@@ -408,11 +408,12 @@ MonoBehaviour:
   maxHealth: 10
   currentHealth: 10
   baseAttack: 1
-  moveSpeed: 4
+  moveSpeed: 4.5
   healthBar: {fileID: 425889790517202327}
-  chaseRadius: 6
+  chaseRadius: 20
   attackRadius: 0
   currentMovementSpeed: 0
+  waitTimer: 0
   timer: 1
   currentTimer: 0
 --- !u!61 &425889792346726656
@@ -439,7 +440,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 2.5}
+  m_Size: {x: 2.5, y: 1}
   m_EdgeRadius: 0
 --- !u!50 &425889792346726662
 Rigidbody2D:
@@ -486,7 +487,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.5, y: 2.5}
+  m_Size: {x: 2.5, y: 1.5}
   m_EdgeRadius: 0
 --- !u!1 &6651924346051160662
 GameObject:

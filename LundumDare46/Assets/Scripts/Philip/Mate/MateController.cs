@@ -35,13 +35,16 @@ public class MateController : MonoBehaviour
             interaktController.setInterakted(false);
             int useAbleRecourceAmount = interaktController.GetRecourceManager().useRessource();
             if(useAbleRecourceAmount != 0){
-                int brieflyCurrentHealth = currentHealth + 2 *useAbleRecourceAmount;
+                int brieflyCurrentHealth = currentHealth + 30 *useAbleRecourceAmount;
                 if( brieflyCurrentHealth > maxMateHealth){
                     currentHealth = maxMateHealth;
                 }
                 else{
                     currentHealth = brieflyCurrentHealth;
                 }
+            }
+            if(interaktController.GetRecourceManager().mediValue == 3){
+                Debug.Log("U WOn");
             }
         }
 
@@ -51,5 +54,7 @@ public class MateController : MonoBehaviour
 
     }
 
+
+    
 
 }

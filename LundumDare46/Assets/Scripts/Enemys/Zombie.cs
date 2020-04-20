@@ -7,7 +7,7 @@ public class Zombie : Enemy
 
     
     public float currentMovementSpeed;
-    private bool waitTimer;
+    public bool waitTimer;
     public float timer;
     public float currentTimer;
 

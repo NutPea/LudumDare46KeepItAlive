@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 3249398555012330445}
   - component: {fileID: 3249398555012330444}
   - component: {fileID: 4013626603497883678}
+  - component: {fileID: 1732695842446138726}
   m_Layer: 0
   m_Name: SlimeSprite
   m_TagString: Untagged
@@ -119,6 +120,18 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &1732695842446138726
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3249398555012330442}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5531ab96668d6ac45907d440bccc704b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &3249398556857103125
 GameObject:
   m_ObjectHideFlags: 0

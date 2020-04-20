@@ -29,6 +29,7 @@ public class PlayerController : MonoBehaviour
 
     private float timer;
     public float knockBackAmount;
+    public GameObject playerHitParticle;
 
 
     private void Start()
@@ -105,6 +106,7 @@ public class PlayerController : MonoBehaviour
     }
 
     public void knockBack(Vector3 damagePosition){
+        Instantiate(playerHitParticle,transform.position,transform.rotation);
         Vector3 direction = (this.transform.position - damagePosition).normalized;
         rb.AddForce(direction * knockBackAmount *Time.deltaTime ,ForceMode2D.Force);
     }

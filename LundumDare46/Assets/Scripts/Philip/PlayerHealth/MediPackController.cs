@@ -20,8 +20,8 @@ public class MediPackController : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other) {
           if(other.gameObject.tag =="Player"){
-            PlayerHealthController phc = other.gameObject.GetComponent<PlayerHealthController>();
-            phc.currentHealth += healAmount;
+            PlayerController phc = other.gameObject.GetComponent<PlayerController>();
+            phc.currHealth += healAmount;
             Destroy(gameObject);
         }
     }

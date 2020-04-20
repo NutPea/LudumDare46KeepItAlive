@@ -10,8 +10,6 @@ public class PatrolZombie : Zombie
     public int currentPoint;
     public float roundingDistance;
 
-    private bool waitTimer;
-
     private void Awake() {
         currentMovementSpeed = moveSpeed;
         currentTimer = timer;

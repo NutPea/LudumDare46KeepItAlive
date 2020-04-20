@@ -95,6 +95,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bulletDamage: 1
+  EnemyParticle: {fileID: 9059997145990625342, guid: d5a8f85d6d912674eb2a22f68464f476,
+    type: 3}
+  EnvirmonetParticle: {fileID: 8577555503409218275, guid: c3ecfcdd3ecac0040892d4db43107ea3,
+    type: 3}
 --- !u!50 &50612225186660622
 Rigidbody2D:
   serializedVersion: 4
