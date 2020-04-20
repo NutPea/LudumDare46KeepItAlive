@@ -67,4 +67,12 @@ public class Slime : Enemy
             transform.position = Vector3.MoveTowards(transform.position, homePosition, moveSpeed * Time.deltaTime);
         }
     }
+
+     private void OnTriggerEnter2D(Collider2D other) {
+         if(other.gameObject.tag == "Player"){
+            other.gameObject.GetComponent<PlayerController>().takeDamage(baseAttack);
+            other.gameObject.GetComponent<PlayerController>().knockBack(transform.position);
+        }
+    }
+
 }

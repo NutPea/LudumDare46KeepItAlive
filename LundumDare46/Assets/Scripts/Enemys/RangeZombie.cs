@@ -32,4 +32,8 @@ public class RangeZombie : Enemy
             transform.position = Vector3.MoveTowards(transform.position, homePosition, moveSpeed * Time.deltaTime);
         }
     }
+
+    public Vector3 GetHomePosition(){
+        return homePosition;
+    }
 }

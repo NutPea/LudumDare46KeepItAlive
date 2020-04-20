@@ -19,6 +19,7 @@ public class BulletEnemy : MonoBehaviour
             if (player != null)
             {
                 player.takeDamage(bulletDamage);
+                player.knockBack(transform.position);
             }
             Destroy(gameObject);
         }

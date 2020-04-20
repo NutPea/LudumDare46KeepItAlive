@@ -27,6 +27,9 @@ public class PlayerController : MonoBehaviour
     public float localScaleOfWeaponSprite;
     private Transform WeaponSpriteTransform;
 
+    private float timer;
+    public float knockBackAmount;
+
 
     private void Start()
     {
@@ -97,7 +100,14 @@ public class PlayerController : MonoBehaviour
         if (currHealth <= 0)
         {
             Debug.Log("Player " + gameObject.name + " destroyed!");
-            Destroy(gameObject);
+            
         }
     }
+
+    public void knockBack(Vector3 damagePosition){
+        Vector3 direction = (this.transform.position - damagePosition).normalized;
+        rb.AddForce(direction * knockBackAmount *Time.deltaTime ,ForceMode2D.Force);
+    }
+
+
 }
