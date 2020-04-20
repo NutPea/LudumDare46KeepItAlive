@@ -13,9 +13,9 @@ GameObject:
   - component: {fileID: 5490152621458664090}
   - component: {fileID: 2833998708370582328}
   - component: {fileID: 1496429472430703298}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: SlimeBall
-  m_TagString: Untagged
+  m_TagString: Bullet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

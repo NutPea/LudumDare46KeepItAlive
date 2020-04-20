@@ -18,6 +18,7 @@ public class PlayerController : MonoBehaviour
     //statisic attributes
     public int maxHealth;
     public int currHealth;
+    
     // Asthetic Shit
     public Rigidbody2D firePointRB;
     private Transform firePivotPoint;
