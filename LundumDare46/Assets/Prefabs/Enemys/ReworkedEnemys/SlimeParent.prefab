@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 3249398555012330443}
   - component: {fileID: 3249398555012330445}
   - component: {fileID: 3249398555012330444}
+  - component: {fileID: 4013626603497883678}
   m_Layer: 0
   m_Name: SlimeSprite
   m_TagString: Untagged
@@ -99,6 +100,25 @@ PositionConstraint:
   m_Sources:
   - sourceTransform: {fileID: 6669593332463869172}
     weight: 1
+--- !u!95 &4013626603497883678
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3249398555012330442}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 1c38bd86a2505ea45929562057c57a5d, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &3249398556857103125
 GameObject:
   m_ObjectHideFlags: 0
@@ -141,10 +161,10 @@ GameObject:
   m_Component:
   - component: {fileID: 6669593332463869172}
   - component: {fileID: 6669593332463869174}
+  - component: {fileID: 3249398555864325961}
   - component: {fileID: 6669593332463869160}
   - component: {fileID: 6669593332463869161}
   - component: {fileID: 6669593332463869162}
-  - component: {fileID: 3249398555864325961}
   m_Layer: 10
   m_Name: SlimeHp
   m_TagString: Enemy
@@ -193,6 +213,32 @@ BoxCollider2D:
   m_AutoTiling: 0
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
+  m_EdgeRadius: 0
+--- !u!61 &3249398555864325961
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6669593332463869163}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1.66, y: 1.18}
+    newSize: {x: 1.66, y: 1.18}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1.5, y: 1.5}
   m_EdgeRadius: 0
 --- !u!50 &6669593332463869160
 Rigidbody2D:
@@ -254,34 +300,8 @@ MonoBehaviour:
   chaseRadius: 12
   attackRadius: 10
   startTimeBtwSpawn: 2
-  spawnPrefab: {fileID: 6465323471233430526, guid: ac583820d9458834a8ad485fa1ed1175,
+  spawnPrefab: {fileID: 6651924346051160662, guid: 5b557ee73318c3642ae766b02d80d59b,
     type: 3}
---- !u!61 &3249398555864325961
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6669593332463869163}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1.66, y: 1.18}
-    newSize: {x: 1.66, y: 1.18}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 1.5, y: 1.5}
-  m_EdgeRadius: 0
 --- !u!1 &6669593332799806189
 GameObject:
   m_ObjectHideFlags: 0
@@ -493,7 +513,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0.8}
+  m_AnchoredPosition: {x: 0.121, y: 0.8}
   m_SizeDelta: {x: 812.3337, y: 161.4329}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!223 &6669593333703665762
@@ -679,7 +699,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -0}
+  m_AnchoredPosition: {x: -16, y: -0}
   m_SizeDelta: {x: 247.2, y: 39.6}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &6669593333995408850
