@@ -25,6 +25,6 @@ public class MateUI : MonoBehaviour
     {
         mateSlider.value = (float)mate.currentHealth/mate.maxMateHealth;
         recourcenText.text = recourceManager.ressourceValue +"";
-        mediText.text = recourceManager.mediValue + " /3";
+        mediText.text = recourceManager.mediValue + "/3";
     }
 }
