@@ -219,9 +219,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyName: 
-  Health: 30
+  maxHealth: 50
+  currentHealth: 50
   baseAttack: 2
   moveSpeed: 2
+  healthBar: {fileID: 0}
   chaseRadius: 12
   attackRadius: 10
   startTimeBtwSpawn: 2

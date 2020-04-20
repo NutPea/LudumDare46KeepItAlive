@@ -10,6 +10,9 @@ public class Slime : Enemy
 
     public override void Start()
     {
+        wasHit = false;
+        currentHealth = maxHealth;
+        healthBar.SetMaxHealth(maxHealth);
         timeBtwSpawn = startTimeBtwSpawn;
         homePosition = gameObject.transform.position;
         target = GameObject.FindGameObjectWithTag("Player").transform;
@@ -18,16 +21,6 @@ public class Slime : Enemy
     // Update is called once per frame
     void Update() 
     {
-        if (timeBtwSpawn <= 0)
-        {
-            Spawn();
-            timeBtwSpawn = startTimeBtwSpawn;
-        }
-        else
-        {
-            timeBtwSpawn -= Time.deltaTime;
-        }
-
         CheckDistance();
     }
 
@@ -42,12 +35,30 @@ public class Slime : Enemy
         {
             RotateTowards(target.position);
             gameObject.GetComponent<EnemyShooting>().inRange = true;
+            if (timeBtwSpawn <= 0)
+            {
+                Spawn();
+                timeBtwSpawn = startTimeBtwSpawn;
+            }
+            else
+            {
+                timeBtwSpawn -= Time.deltaTime;
+            }
         }
-        else if (Vector3.Distance(target.position, transform.position) <= chaseRadius && Vector3.Distance(target.position, transform.position) > attackRadius) //if enemy is in chaserange but not in attackrange, chase him
+        else if (Vector3.Distance(target.position, transform.position) <= chaseRadius && Vector3.Distance(target.position, transform.position) > attackRadius || wasHit == true) //if enemy is in chaserange but not in attackrange, chase him
         {
             RotateTowards(target.position);
             gameObject.GetComponent<EnemyShooting>().inRange = false;
             transform.position = Vector3.MoveTowards(transform.position, target.position, moveSpeed * Time.deltaTime);
+            if (timeBtwSpawn <= 0)
+            {
+                Spawn();
+                timeBtwSpawn = startTimeBtwSpawn;
+            }
+            else
+            {
+                timeBtwSpawn -= Time.deltaTime;
+            }
         }
         else if (Vector3.Distance(target.position, transform.position) > chaseRadius) //if enemy is not in chaserange, go back
         {

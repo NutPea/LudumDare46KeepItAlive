@@ -19,7 +19,7 @@ public class RangeZombie : Enemy
             gameObject.GetComponent<EnemyShooting>().inRange = true;
         }
         else if (Vector3.Distance(target.position, transform.position) <= chaseRadius &&
-            Vector3.Distance(target.position, transform.position) > attackRadius) //if enemy is in chaserange but not in attackrange, chase him
+            Vector3.Distance(target.position, transform.position) > attackRadius || wasHit == true) //if enemy is in chaserange but not in attackrange, chase him
         {
             RotateTowards(target.position);
             gameObject.GetComponent<EnemyShooting>().inRange = false;

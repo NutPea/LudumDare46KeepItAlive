@@ -13,7 +13,7 @@ public class PatrolZombie : Zombie
     public override void CheckDistance()
     {
 
-        if (Vector3.Distance(target.position, transform.position) <= chaseRadius && Vector3.Distance(target.position, transform.position) > attackRadius)
+        if (Vector3.Distance(target.position, transform.position) <= chaseRadius && Vector3.Distance(target.position, transform.position) > attackRadius || wasHit == true)
         {
             RotateTowards(target.position);
             transform.position = Vector3.MoveTowards(transform.position, target.position, moveSpeed * Time.deltaTime);
