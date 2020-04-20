@@ -6,6 +6,7 @@ public class RecourceManager : MonoBehaviour
 {
 
     public int ressourceValue;
+    public int mediValue;
     // Start is called before the first frame update
 
     public void addRecources(int addableRecources){

@@ -1,11 +1,9 @@
 fileFormatVersion: 2
-guid: b0a1bbc91ba37de4e892d398007b45bd
+guid: 7a6551d2e3764d04b900736e66ca12ff
 TextureImporter:
   fileIDToRecycleName:
-    21300000: MainPlayer_Items_0
-    21300002: MainPlayer_Items_1
-    21300004: MainPlayer_Items_2
-    21300006: MainPlayer_Items_3
+    21300000: Mate_Idle_0
+    21300002: Mate_Idle_1
   externalObjects: {}
   serializedVersion: 9
   mipmaps:
@@ -88,13 +86,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: MainPlayer_Items_0
+      name: Mate_Idle_0
       rect:
         serializedVersion: 2
-        x: 17
-        y: 66
-        width: 14
-        height: 23
+        x: 0
+        y: 17
+        width: 100
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -102,19 +100,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ab52e56dbd911364cbbfe309d9caf5ce
+      spriteID: a194282ad3fd8544093395ca41de8bbd
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: MainPlayer_Items_1
+      name: Mate_Idle_1
       rect:
         serializedVersion: 2
-        x: 69
-        y: 73
-        width: 22
-        height: 22
+        x: 101
+        y: 17
+        width: 99
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -122,47 +120,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9a0fee762e5c9514b84def163f7305eb
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: MainPlayer_Items_2
-      rect:
-        serializedVersion: 2
-        x: 9
-        y: 0
-        width: 30
-        height: 30
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 200262996e58f444a91eeb92f668db85
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: MainPlayer_Items_3
-      rect:
-        serializedVersion: 2
-        x: 64
-        y: 0
-        width: 24
-        height: 28
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 40c7e3aed7a428d49b5421a35cc9d1b7
+      spriteID: ee29c071b64dbe44489c616654f51649
       vertices: []
       indices: 
       edges: []
@@ -170,7 +128,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 2487d38a82fbedf4e86378918f7560e2
+    spriteID: f78abef03991d8f4593875e085c1a056
     vertices: []
     indices: 
     edges: []

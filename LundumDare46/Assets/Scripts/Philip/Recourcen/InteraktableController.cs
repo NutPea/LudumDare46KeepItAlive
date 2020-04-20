@@ -49,10 +49,11 @@ public class InteraktableController : MonoBehaviour
         {
             if (findPlayerInRadius.getInRange())
             {
+                interaktableGameObject.SetActive(true);
                 if (Input.GetKey(KeyCode.E) && interaktAmount < 1)
                 {
-                    interaktAmount += Time.deltaTime / interaktAmountTime;
                     interaktableGameObject.SetActive(true);
+                    interaktAmount += Time.deltaTime / interaktAmountTime;
                     interaktableSprite.setInteraktAmount(interaktAmount);
                     if (interaktAmount >= 1)
                     {
