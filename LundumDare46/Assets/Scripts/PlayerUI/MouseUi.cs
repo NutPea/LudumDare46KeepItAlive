@@ -4,16 +4,15 @@ using UnityEngine;
 
 public class MouseUi : MonoBehaviour
 {
-    public Transform MouseCursor;
-    
+    public Texture2D currsorArrow;
     void Start()
     {
-        Cursor.visible = false;
+        Cursor.SetCursor(currsorArrow,Vector2.zero,CursorMode.ForceSoftware);
     }
 
     // Update is called once per frame
     void Update()
     {
-        MouseCursor.transform.position = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        
     }
 }
