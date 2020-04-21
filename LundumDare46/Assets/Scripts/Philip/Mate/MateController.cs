@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.SceneManagement; 
 public class MateController : MonoBehaviour
 {
 
@@ -44,12 +44,12 @@ public class MateController : MonoBehaviour
                 }
             }
             if(interaktController.GetRecourceManager().mediValue == 3){
-                Debug.Log("U WOn");
+                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
             }
         }
 
         if(currentHealth <=0){
-            Debug.Log("Mate Died");
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         }
 
     }

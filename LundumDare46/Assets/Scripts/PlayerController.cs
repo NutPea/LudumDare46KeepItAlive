@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
@@ -101,7 +102,7 @@ public class PlayerController : MonoBehaviour
         if (currHealth <= 0)
         {
             Debug.Log("Player " + gameObject.name + " destroyed!");
-            
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         }
     }
 
